@@ -1,0 +1,3 @@
+$('#app').slick({
+    infinite: false,
+});

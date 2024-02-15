@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arrrty</title>
+
+    <!-- jQuery -->
+    <script src="./js/jquery-3.7.1.min.js" defer></script>
+
+    <!-- Slick -->
+    <script src="./slick/slick.min.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+
+    <!-- Chart.js - для красивой диограммы -->
+    <!-- <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- Главный JS -->
+    <script src="js/main.js" defer></script>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- ICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/site.webmanifest">
+	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="app">
+        <section class="page">
+            <div class="page__container" >
+                <h1 class="welcome">Приветствую :)</h1>
+                <p class="welcome-text">Листай дальше, немного расскажу о себе</p>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="page">
+            <div class="page__container" >
+                <div class="about-my">
+                    <div class="about-my__text">
+                        <h3 class="about-my__name">Якимов Артем Дмитриевич</h3>
+                        <p class="about-my__prof">Frontend-разработчик и веб-верстальщик</p>
+                    </div>
+                    <div class="about-my__chart" >
+                        <canvas id="js-chart"></canvas>
+                        <h4>Красивая диограммка о навыках (в процентах)</h4>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            <script>
+                const ctx = document.getElementById('js-chart');
+                console.log(ctx);
+              
+                Chart.defaults.color = '#fff';
+                Chart.defaults.borderColor = '#747474';
+
+                new Chart(ctx, {
+                    type: 'polarArea',
+                    data: {
+                        labels: [
+                            'HTML',
+                            'CSS',
+                            'JS',
+                            'React',
+                            'SQL',
+                        ],
+                        datasets: [{
+                            label: 'Изученно',
+                            data: [79, 86, 64, 31, 42],
+                            backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(75, 192, 192)',
+                            'rgb(255, 205, 86)',
+                            'rgb(201, 203, 207)',
+                            'rgb(54, 162, 235)'
+                            ],
+                            // borderColor: 'rgb(0, 0, 0)',
+                            borderWidth: 0,
+                            
+                        }]
+                    },
+                    options: {
+                        layout: {
+                            padding: 20
+                        }
+                    }
+                });
+            </script>
+
+        </section>
+
+        <!-- Примеры работ -->
+        <section class="page">
+            <div class="page__container projects">
+                <h3 class="projects__heading">Проекты</h3>
+                <ul class="list-project">
+                    <li class="project">
+                        <a class="project__link" href="https://arrrty.github.io/Need_for_drive/" target="_blank">
+                            <img class="project__img" src="./img/img-project-1.png" alt="React project">
+                            <p class="project__text">Каршеринг<br>Потуги разработки на React</p>
+                        </a>
+                    </li>
+                    <li class="project">
+                        <a class="project__link" href="https://arrrty.github.io/furniture-store/" target="_blank">
+                            <img class="project__img" src="./img/img-project-2.jpeg" alt="React project">
+                            <p class="project__text">Так себе лендинг</p>
+                        </a>
+                    </li>
+                    <li class="project">
+                        <a class="project__link" href="https://arrrty.github.io/CRM/" target="_blank">
+                            <img class="project__img" src="./img/img-project-3" alt="React project">
+                            <p class="project__text">CRM-система на чистом JS</p>
+                        </a>
+                    </li>
+                    <li class="project">
+                        <a class="project__link" href="https://arrrty.github.io/Pairs/" target="_blank">
+                            <img class="project__img" src="./img/img-project-4.png" alt="React project">
+                            <p class="project__text">Мини игра в пары на чистом JS</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
